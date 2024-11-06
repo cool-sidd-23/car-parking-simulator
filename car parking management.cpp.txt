@@ -1,0 +1,93 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int choice;
+    string carNumber;
+    int slotNumber;
+
+    cout << "Car Parking Management System\n";
+    cout << "1. Park Car\n";
+    cout << "2. Vacate Slot\n";
+    cout << "3. Exit\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    if (choice == 1) { // Park Car
+        cout << "Enter car number plate: ";
+        cin >> carNumber;
+
+        cout << "Choose parking type:\n";
+        cout << "1. Regular Slot\n";
+        cout << "2. Premium Slot\n";
+        cout << "Enter your choice: ";
+        int type;
+        cin >> type;
+
+        if (type == 1) { // Regular Slot
+            cout << "Enter slot number (1-10): ";
+            cin >> slotNumber;
+
+            if (slotNumber >= 1 && slotNumber <= 10) {
+                cout << "Car with number plate " << carNumber << " parked in regular slot." << endl;
+            } else {
+                cout << "Invalid slot number. Please enter a number between 1 and 10." << endl;
+            }
+        }
+        else if (type == 2) { // Premium Slot
+            cout << "Enter slot number (1-5): ";
+            cin >> slotNumber;
+
+            if (slotNumber >= 1 && slotNumber <= 5) {
+                cout << "Car with number plate " << carNumber << " parked in premium slot." << endl;
+            } else {
+                cout << "Invalid slot number. Please enter a number between 1 and 5." << endl;
+            }
+        } else {
+            cout << "Invalid parking type." << endl;
+        }
+    }
+    else if (choice == 2) { // Vacate Slot
+        cout << "Enter car number plate to vacate: ";
+        cin >> carNumber;
+
+        cout << "Choose parking type:\n";
+        cout << "1. Regular Slot\n";
+        cout << "2. Premium Slot\n";
+        cout << "Enter your choice: ";
+        int type;
+        cin >> type;
+
+        if (type == 1) { // Regular Slot
+            cout << "Enter slot number (1-10): ";
+            cin >> slotNumber;
+
+            if (slotNumber >= 1 && slotNumber <= 10) {
+                cout << "Regular slot vacated." << endl;
+            } else {
+                cout << "Invalid slot number. Please enter a number between 1 and 10." << endl;
+            }
+        }
+        else if (type == 2) { // Premium Slot
+            cout << "Enter slot number (1-5): ";
+            cin >> slotNumber;
+
+            if (slotNumber >= 1 && slotNumber <= 5) {
+                cout << "Premium slot vacated." << endl;
+            } else {
+                cout << "Invalid slot number. Please enter a number between 1 and 5." << endl;
+            }
+        } else {
+            cout << "Invalid parking type." << endl;
+        }
+    }
+    else if (choice == 3) { // Exit
+        cout << "Exiting program..." << endl;
+    }
+    else {
+        cout << "Invalid choice. Please try again." << endl;
+    }
+
+    return 0;
+}
